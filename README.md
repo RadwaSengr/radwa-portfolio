@@ -32,25 +32,16 @@ Welcome to my personal portfolio website! This project is a Single Page Applicat
 
 ## 🚀 How to Run Locally
 
-
-
 If you want to run this project on your local machine, follow these steps:
 
-
-
 1. Clone the repository:
-
    ```bash
+   git clone https://github.com/RadwaSengr/MyReactPortfolio.git] 
 
-  git clone [[https://github.com/RadwaSengr/MyReactPortfolio.git]([https://github.com/RadwaSengr/MyReactPortfolio.git])] 
-
-] 
-
-  1. Navigate to the project directory:
   cd my-react-portfolio 
-  2. Install dependencies: 
+   
   npm install
-  3. Start the development server:
+ 
   npm run dev
 
 ## 📬 Contact
