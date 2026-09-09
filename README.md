@@ -22,18 +22,19 @@ If you want to run this project on your local machine, follow these steps:
    ```bash
    git clone https://github.com/RadwaSengr/MyReactPortfolio.git
 
-   Navigate to the project directory: 
+ 2.  Navigate to the project directory: 
    ```bash
    cd my-react-portfolio
 
-   Install dependencies:
+ 3.  Install dependencies:
    ```bash
    npm install
 
-   Start the development server:
+4. Start the development server:
    ```bash
    npm run dev
 
-   ## 📬 Contact
+   
+## 📬 Contact
 Built with 💖 by Radwa Usama Sengr - Front-End Software Engineer.
 
