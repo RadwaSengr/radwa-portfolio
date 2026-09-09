@@ -63,8 +63,19 @@ function App() {
         </Routes>
       </div>
 
-      <footer className="bg-white text-center py-3 border-top border-primary mt-auto">
-        <p className="text-primary mb-0">© 2026 | Built with 💖 by Radwa Usama Sengr</p>
+      <footer className="bg-white text-center py-4 border-top border-primary mt-auto">
+        <div className="mb-2">
+          {/* GitHub Link */}
+          <a href="https://github.com/RadwaSengr" target="_blank" rel="noopener noreferrer" className="text-primary fs-4 mx-3">
+            <i className="fa-brands fa-github"></i>
+          </a>
+          
+          {/* LinkedIn Link */}
+          <a href="https://www.linkedin.com/in/radwa-s-2b4079306?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="text-primary fs-4 mx-3">
+            <i className="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <p className="text-primary mb-0 mt-2">© 2026 | Built with 💖 by Radwa Usama Sengr</p>
       </footer>
     </BrowserRouter>
   );
