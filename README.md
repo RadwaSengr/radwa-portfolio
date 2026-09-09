@@ -38,11 +38,13 @@ If you want to run this project on your local machine, follow these steps:
 
 
 
-Clone the repository:
+1. Clone the repository:
 
    ```bash
 
   git clone [[https://github.com/RadwaSengr/MyReactPortfolio.git]([https://github.com/RadwaSengr/MyReactPortfolio.git])] 
+
+] 
 
   1. Navigate to the project directory:
   cd my-react-portfolio 
