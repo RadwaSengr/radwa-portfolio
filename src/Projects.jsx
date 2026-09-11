@@ -1,3 +1,7 @@
+import breastCancerImg from './assets/breast-cancer.jpg';
+import sakinaImg from './assets/sakina.jpg';
+import wonderlandImg from './assets/wonderland.jpg';
+
 function Projects({ lang }) {
   const myPortfolioProjects = [
     { 
@@ -9,7 +13,7 @@ function Projects({ lang }) {
       tech: ["HTML", "CSS", "TypeScript", "React", "Bootstrap"],
       github: "https://github.com/RadwaSengr/breast-cancer-care-ai.git",
       demo: "https://radwasengr.github.io/breast-cancer-care-ai/",
-      image: `${import.meta.env.BASE_URL}breast-cancer.jpg`
+      image: breastCancerImg
     },
     { 
       id: 2, 
@@ -19,7 +23,7 @@ function Projects({ lang }) {
         : "تصميم وتنفيذ واجهة مستخدم متجاوبة وسلسة لمنصة سَكِينَة مع التركيز على تحسين تجربة المستخدم.",
       tech: ["HTML", "CSS", "TypeScript", "React"],
       github: "https://github.com/RadwaSengr/SAKINA.git",
-      image: `${import.meta.env.BASE_URL}sakina.jpg`
+      image: sakinaImg
     },
     { 
       id: 3, 
@@ -29,7 +33,7 @@ function Projects({ lang }) {
         : "بناء واجهة جذابة وديناميكية لموقع مطعم، تحتوي على قوائم طعام تفاعلية وتصاميم متميزة.",
       tech: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/RadwaSengr/Wonderland-Restaurant.git",
-      image: `${import.meta.env.BASE_URL}wonderland.jpg`
+      image: wonderlandImg
     }
   ];
 

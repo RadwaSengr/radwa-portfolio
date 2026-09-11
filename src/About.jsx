@@ -1,3 +1,5 @@
+import profilePic from './assets/Radwa-Sengr.jpeg';
+
 function About() {
   return (
     <section id="about" className="py-5 bg-white rounded shadow-sm border border-primary mb-5">
@@ -10,7 +12,7 @@ function About() {
             <div className="mb-4">
               <div className="p-2 bg-light rounded-circle border border-primary d-inline-block shadow-sm overflow-hidden">
                 <img 
-                  src={`${import.meta.env.BASE_URL}Radwa-Sengr.jpeg`} 
+                  src={profilePic} 
                   alt="Radwa Sengr" 
                   className="img-fluid"
                   style={{ 
@@ -51,7 +53,7 @@ function About() {
               </a>
               
               <a 
-                href={`${import.meta.env.BASE_URL}Radwa Usama Sengr - CV (1).pdf`} 
+                href={`${import.meta.env.BASE_URL}Radwa%20Usama%20Sengr%20-%20CV%20(1).pdf`} 
                 download="Radwa_Sengr_Frontend_CV.pdf"
                 className="btn btn-primary fw-bold"
               >
