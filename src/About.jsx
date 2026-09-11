@@ -1,50 +1,68 @@
-import radwaPhoto from './assets/radwa-photo.jpg';
-
 function About() {
   return (
-    <div className="mt-4 p-4 bg-white rounded shadow-sm border border-primary text-center">
-      
-      {/* Profile Header */}
-      <div className="mb-4">
-        <img 
-          src={radwaPhoto} 
-          alt="Radwa Usama" 
-          className="rounded-circle shadow border border-3 border-primary mb-3"
-          style={{ 
-            width: '160px', 
-            height: '160px', 
-            objectFit: 'cover',
-            objectPosition: 'center 20%'
-          }}
-        />
-        <h2 className="text-primary fw-bold">Radwa Usama Sengr 👩‍💻</h2>
-        <p className="text-muted fw-bold">Front-End Software Engineer | Damanhour, Egypt</p>
-        <p className="lead px-md-5 mt-3" style={{ fontSize: '1.05rem' }}>
-          A motivated Computer Science student with a solid foundation in software engineering and a strong passion for Front-End Development. Recognized for competitive problem-solving skills, notably securing a Top 5 placement in the prestigious AI Hackathon.
-        </p>
-        <a 
-          href="/Radwa Usama Sengr - CV.pdf" 
-          download="Radwa_Usama_CV.pdf" 
-          className="btn btn-outline-primary px-4 py-2 fw-bold mt-2"
-        >
-          <i className="fa-solid fa-download me-2"></i> Download Full CV 📄
-        </a>
-      </div>
+    <section id="about" className="py-5 bg-white rounded shadow-sm border border-primary mb-5">
+      <div className="container">
+        <h2 className="text-primary mb-4 text-center fw-bold">👩‍💻 About Me</h2>
+        
+        <div className="row justify-content-center">
+          <div className="col-lg-8 text-center">
+            
+           <div className="mb-4">
+  <div className="p-2 bg-light rounded-circle border border-primary d-inline-block shadow-sm overflow-hidden">
+    <img 
+      src="/Radwa-Sengr.jpeg" 
+      alt="Radwa Sengr" 
+      className="img-fluid"
+      style={{ 
+        width: "200px", 
+        height: "200px", 
+        objectFit: "cover", 
+        objectPosition: "center 20%", 
+        borderRadius: "50%"
+      }} 
+    />
+  </div>
+</div>
+            
+            <h3 className="text-primary fw-bold mb-3">Frontend React Developer</h3>
+            <p className="text-secondary fs-5 mb-3">
+              Passionate Frontend Developer dedicated to crafting responsive, high-performance web applications with intuitive user experiences.
+            </p>
+            <p className="text-secondary mb-4">
+              Achieved <strong>Top 5 Finalist</strong> in the AI Hackathon for developing the <em>BreastCancerCare-AI</em> frontend. Always eager to turn ideas into clean and interactive code.
+            </p>
+            
+            <div className="d-flex flex-wrap gap-2 justify-content-center mt-3">
+              <span className="badge bg-light text-primary border border-primary">React.js</span>
+              <span className="badge bg-light text-primary border border-primary">JavaScript (ES6+)</span>
+              <span className="badge bg-light text-primary border border-primary">HTML5 & CSS3</span>
+              <span className="badge bg-light text-primary border border-primary">Bootstrap 5</span>
+              <span className="badge bg-light text-primary border border-primary">Git & GitHub</span>
+            </div>
 
-      <hr className="border-primary my-4" />
+            <div className="mt-4 d-flex flex-wrap gap-3 justify-content-center">
+              <a 
+                href="https://github.com/RadwaSengr" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn btn-outline-primary fw-bold"
+              >
+                <i className="fa-brands fa-github me-1"></i> GitHub Profile
+              </a>
+              
+              <a 
+                href="/Radwa Usama Sengr - CV (1).pdf" 
+                download="Radwa_Sengr_Frontend_CV.pdf"
+                className="btn btn-primary fw-bold"
+              >
+                <i className="fa-solid fa-download me-1"></i> Download CV
+              </a>
+            </div>
 
-      {/* Skills Section */}
-      <div className="text-start">
-        <h3 className="text-primary mb-3 text-center">💡 Core Skills</h3>
-        <div className="p-3 border rounded border-primary bg-light">
-          <p className="mb-2"><strong>Web Development:</strong> HTML5, CSS3, Responsive Web Design, UI/UX Principles</p>
-          <p className="mb-2"><strong>Programming Languages:</strong> Python, C, C++</p>
-          <p className="mb-2"><strong>Tools & Version Control:</strong> Git, GitHub, VS Code, CLI</p>
-          <p className="mb-0"><strong>Soft Skills:</strong> Problem-Solving, Team Collaboration, Fast Learner</p>
+          </div>
         </div>
       </div>
-
-    </div>
+    </section>
   );
 }
 
