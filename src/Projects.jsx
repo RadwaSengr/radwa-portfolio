@@ -11,7 +11,6 @@ function Projects({ lang }) {
         ? "Top 5 Finalist, AI Hackathon. Developed the front-end interface for an AI-powered healthcare application focused on breast cancer care."
         : "من أفضل 5 مشاريع في هاكاثون الذكاء الاصطناعي. تطوير واجهة المستخدم لتطبيق صحي يعتمد على الذكاء الاصطناعي.",
       tech: ["HTML", "CSS", "TypeScript", "React", "Bootstrap"],
-      github: "https://github.com/RadwaSengr/breast-cancer-care-ai.git",
       demo: "https://radwasengr.github.io/breast-cancer-care-ai/",
       image: breastCancerImg
     },
@@ -22,7 +21,7 @@ function Projects({ lang }) {
         ? "Designed and implemented a responsive and intuitive user interface for the 'SAKINA' platform, prioritizing user experience."
         : "تصميم وتنفيذ واجهة مستخدم متجاوبة وسلسة لمنصة سَكِينَة مع التركيز على تحسين تجربة المستخدم.",
       tech: ["HTML", "CSS", "TypeScript", "React"],
-      github: "https://github.com/RadwaSengr/SAKINA.git",
+      demo: "https://radwasengr.github.io/SAKINA/",
       image: sakinaImg
     },
     { 
@@ -32,7 +31,7 @@ function Projects({ lang }) {
         ? "Built a visually appealing and dynamic front-end for a restaurant website, featuring interactive menus and engaging layouts."
         : "بناء واجهة جذابة وديناميكية لموقع مطعم، تحتوي على قوائم طعام تفاعلية وتصاميم متميزة.",
       tech: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/RadwaSengr/Wonderland-Restaurant.git",
+      demo: "https://radwasengr.github.io/Wonderland-Restaurant/",
       image: wonderlandImg
     }
   ];
@@ -69,16 +68,6 @@ function Projects({ lang }) {
                   </div>
                   
                   <div className="d-flex gap-2">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="btn btn-sm btn-outline-primary w-100 fw-bold d-flex align-items-center justify-content-center gap-1"
-                    >
-                      <i className="fa-brands fa-github"></i> 
-                      {lang === 'en' ? 'Code' : 'الكود'}
-                    </a>
-                    
                     {project.demo && (
                       <a 
                         href={project.demo} 
@@ -87,7 +76,7 @@ function Projects({ lang }) {
                         className="btn btn-sm btn-primary w-100 fw-bold d-flex align-items-center justify-content-center gap-1"
                       >
                         <i className="fa-solid fa-arrow-up-right-from-square"></i> 
-                        {lang === 'en' ? 'Demo' : 'معاينة'}
+                        {lang === 'en' ? 'Live Demo' : 'معاينة المشروع'}
                       </a>
                     )}
                   </div>

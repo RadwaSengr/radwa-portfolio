@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-function Contact() {
+function Contact({ lang }) {
   const formRef = useRef();
   const [formData, setFormData] = useState({ user_name: '', user_email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -36,91 +36,45 @@ function Contact() {
       })
       .catch((err) => {
         console.error(err);
-        setError('Something went wrong. Please try again!');
+        setError(lang === 'en' ? 'Something went wrong. Please try again!' : 'حدث خطأ ما. يرجى المحاولة مرة أخرى!');
         setLoading(false);
       });
   };
 
   return (
-    <section id="contact" className="py-5 bg-white rounded shadow-sm border border-primary col-md-10 col-lg-8 mx-auto mb-5">
+    <section id="contact" className="py-5 bg-body-tertiary rounded shadow-sm border border-primary col-md-10 col-lg-8 mx-auto mb-5">
       <div className="px-3">
-        <h2 className="text-primary mb-2 text-center fw-bold">Get In Touch 📬</h2>
-        <p className="text-center text-secondary mb-4">
-          Feel free to reach out via direct message or through the contact form below!
+        <h2 className="text-primary mb-2 text-center fw-bold">
+          {lang === 'en' ? 'Get In Touch 📬' : 'تواصل معي 📬'}
+        </h2>
+        <p className="text-center text-body-secondary mb-4">
+          {lang === 'en' 
+            ? 'Feel free to reach out via the contact form below!' 
+            : 'لا تتردد في مراسلتي عبر النموذج أدناه!'}
         </p>
-
-        {/* 🌟 أزرار التواصل المباشر باللينكات الحقيقية 🌟 */}
-        <div className="row g-3 justify-content-center mb-4 text-center">
-          {/* Direct Email */}
-          <div className="col-6 col-md-3">
-            <a 
-              href="mailto:radwasengr44@gmail.com" 
-              className="p-3 border rounded border-primary d-block text-decoration-none card-hover bg-light"
-            >
-              <i className="fa-solid fa-envelope fs-3 text-primary mb-2"></i>
-              <div className="fw-bold text-dark fs-6">Email</div>
-            </a>
-          </div>
-
-          {/* LinkedIn */}
-          <div className="col-6 col-md-3">
-            <a 
-              href="https://www.linkedin.com/in/radwa-s-2b4079306" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="p-3 border rounded border-primary d-block text-decoration-none card-hover bg-light"
-            >
-              <i className="fa-brands fa-linkedin fs-3 text-primary mb-2"></i>
-              <div className="fw-bold text-dark fs-6">LinkedIn</div>
-            </a>
-          </div>
-
-          {/* GitHub */}
-          <div className="col-6 col-md-3">
-            <a 
-              href="https://github.com/RadwaSengr" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="p-3 border rounded border-primary d-block text-decoration-none card-hover bg-light"
-            >
-              <i className="fa-brands fa-github fs-3 text-primary mb-2"></i>
-              <div className="fw-bold text-dark fs-6">GitHub</div>
-            </a>
-          </div>
-
-          {/* Facebook */}
-          <div className="col-6 col-md-3">
-            <a 
-              href="https://www.facebook.com/share/19WkpMHX4a/" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="p-3 border rounded border-primary d-block text-decoration-none card-hover bg-light"
-            >
-              <i className="fa-brands fa-facebook fs-3 text-primary mb-2"></i>
-              <div className="fw-bold text-dark fs-6">Facebook</div>
-            </a>
-          </div>
-        </div>
-
-        <hr className="my-4 border-primary" />
 
         {/* ✉️ فورمة إرسال الرسائل ✉️ */}
         {submitted ? (
           <div className="alert alert-success text-center fw-bold">
-            Thank you, <strong>{formData.user_name || 'Friend'}</strong>! Your message has been sent successfully ✨.
+            {lang === 'en' ? (
+              <>Thank you, <strong>{formData.user_name || 'Friend'}</strong>! Your message has been sent successfully ✨.</>
+            ) : (
+              <>شكراً لك، <strong>{formData.user_name || 'يا صديقي'}</strong>! تم إرسال رسالتك بنجاح ✨.</>
+            )}
           </div>
         ) : (
-          <form ref={formRef} onSubmit={handleSubmit} className="col-md-10 mx-auto">
-            <h4 className="text-primary mb-3 text-center fw-bold fs-5">Or Send Me a Quick Message</h4>
+          <form ref={formRef} onSubmit={handleSubmit} className="col-md-10 mx-auto p-4 border rounded border-primary-subtle bg-body shadow-sm">
             {error && <div className="alert alert-danger mb-3">{error}</div>}
 
             <div className="mb-3 text-start">
-              <label className="form-label text-primary fw-bold">Your Name:</label>
+              <label className="form-label text-body fw-bold">
+                {lang === 'en' ? 'Your Name:' : 'الاسم:'}
+              </label>
               <input 
                 type="text" 
                 name="user_name"
-                className="form-control border-primary" 
-                placeholder="Enter your name" 
+                className="form-control border-primary-subtle" 
+                placeholder={lang === 'en' ? 'Enter your name' : 'أدخل اسمك'} 
                 value={formData.user_name}
                 onChange={handleChange}
                 required
@@ -128,11 +82,13 @@ function Contact() {
             </div>
 
             <div className="mb-3 text-start">
-              <label className="form-label text-primary fw-bold">Your Email:</label>
+              <label className="form-label text-body fw-bold">
+                {lang === 'en' ? 'Your Email:' : 'البريد الإلكتروني:'}
+              </label>
               <input 
                 type="email" 
                 name="user_email"
-                className="form-control border-primary" 
+                className="form-control border-primary-subtle" 
                 placeholder="name@example.com" 
                 value={formData.user_email}
                 onChange={handleChange}
@@ -140,21 +96,25 @@ function Contact() {
               />
             </div>
 
-            <div className="mb-3 text-start">
-              <label className="form-label text-primary fw-bold">Message:</label>
+            <div className="mb-4 text-start">
+              <label className="form-label text-body fw-bold">
+                {lang === 'en' ? 'Message:' : 'الرسالة:'}
+              </label>
               <textarea 
                 name="message"
-                className="form-control border-primary" 
+                className="form-control border-primary-subtle" 
                 rows="4" 
-                placeholder="Write your message here..."
+                placeholder={lang === 'en' ? 'Write your message here...' : 'اكتب رسالتك هنا...'}
                 value={formData.message}
                 onChange={handleChange}
                 required
               ></textarea>
             </div>
 
-            <button type="submit" className="btn btn-outline-primary w-100 fw-bold py-2" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message 🚀'}
+            <button type="submit" className="btn btn-primary w-100 fw-bold py-2" disabled={loading}>
+              {loading 
+                ? (lang === 'en' ? 'Sending...' : 'جاري الإرسال...') 
+                : (lang === 'en' ? 'Send Message 🚀' : 'إرسال الرسالة 🚀')}
             </button>
           </form>
         )}
