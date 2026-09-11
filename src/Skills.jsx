@@ -1,64 +1,54 @@
-function Skills({ lang }) {
-  // المهارات التقنية
-  const techSkillsList = [
-    { name: "HTML5", icon: "fa-brands fa-html5 text-danger" },
-    { name: "CSS3", icon: "fa-brands fa-css3-alt text-primary" },
-    { name: "JavaScript", icon: "fa-brands fa-js text-warning" },
-    { name: "Bootstrap", icon: "fa-brands fa-bootstrap text-info" },
-    { name: "React", icon: "fa-brands fa-react text-info" },
-    { name: "C++", icon: "fa-solid fa-code text-primary" },
-    { name: "C#", icon: "fa-solid fa-hashtag text-info" },
-    { name: "Java", icon: "fa-brands fa-java text-danger" },
-    { name: "Python", icon: "fa-brands fa-python text-primary" },
-    { name: "Git & GitHub", icon: "fa-brands fa-git-alt text-danger" },
-    { name: "Responsive Design", icon: "fa-solid fa-mobile-screen text-success" },
+function Skills() {
+  const technical = [
+    ['HTML5', 'fa-brands fa-html5 icon-html'],
+    ['CSS3', 'fa-brands fa-css3-alt icon-css'],
+    ['JavaScript', 'fa-brands fa-js icon-js'],
+    ['Bootstrap', 'fa-brands fa-bootstrap icon-bootstrap'],
+    ['React', 'fa-brands fa-react icon-react'],
+    ['Next.js', 'fa-solid fa-n icon-next'],
+    ['TypeScript', 'fa-solid fa-code icon-typescript'],
+    ['MS SQL Server', 'fa-solid fa-database icon-sql'],
+    ['C++', 'fa-solid fa-c icon-cpp'],
+    ['C#', 'fa-solid fa-hashtag icon-csharp'],
+    ['MySQL', 'fa-solid fa-database icon-mysql'],
+    ['Firebase', 'fa-solid fa-fire icon-firebase'],
+    ['Java', 'fa-brands fa-java icon-java'],
+    ['Python', 'fa-brands fa-python icon-python'],
+    ['Responsive Web Design', 'fa-solid fa-mobile-screen icon-responsive'],
+    ['Web Application Development', 'fa-solid fa-laptop-code icon-web'],
+    ['VS Code', 'fa-solid fa-code icon-vscode'],
+    ['Git & GitHub', 'fa-brands fa-git-alt icon-git']
   ];
 
-  // المهارات الشخصية (Soft Skills)
-  const softSkillsList = [
-    { nameEn: "Leadership", nameAr: "القيادة وإدارة الفرق", icon: "fa-solid fa-users-gear text-primary" },
-    { nameEn: "Problem Solving", nameAr: "حل المشكلات", icon: "fa-solid fa-puzzle-piece text-warning" },
-    { nameEn: "Teamwork", nameAr: "العمل الجماعي", icon: "fa-solid fa-people-group text-info" },
-    { nameEn: "Time Management", nameAr: "إدارة الوقت", icon: "fa-solid fa-clock text-danger" },
-    { nameEn: "Communication", nameAr: "التواصل الفعال", icon: "fa-solid fa-comments text-success" },
+  const soft = [
+    ['Teamwork', 'fa-solid fa-people-group icon-teamwork'],
+    ['Leadership', 'fa-solid fa-users-gear icon-leadership'],
+    ['Communication', 'fa-solid fa-comments icon-communication'],
+    ['Problem-Solving', 'fa-solid fa-puzzle-piece icon-problem-solving'],
+    ['Time Management', 'fa-solid fa-clock icon-time'],
+    ['Adaptability', 'fa-solid fa-sliders icon-adaptability']
   ];
+
+  const renderSkills = (list) => (
+    <div className="row g-3 justify-content-center">
+      {list.map(([name, icon]) => (
+        <div className="col-6 col-md-3" key={name}>
+          <div className="skill-card p-3 border rounded border-primary-subtle bg-body-tertiary card-hover h-100 d-flex flex-column align-items-center justify-content-center">
+            <i className={`skill-icon ${icon}`} aria-hidden="true"></i>
+            <span className="fw-bold text-body text-center">{name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <section id="skills" className="py-5 rounded shadow-sm border border-primary mb-5">
       <div className="container text-center">
-        
-        {/* قسم المهارات التقنية */}
-        <h2 className="text-primary mb-4 fw-bold">
-          {lang === 'en' ? '🛠️ Technical Skills' : '🛠️ المهارات التقنية'}
-        </h2>
-        <div className="row g-3 justify-content-center mb-5">
-          {techSkillsList.map((skill, index) => (
-            <div className="col-6 col-md-3" key={index}>
-              <div className="p-3 border rounded border-primary-subtle bg-body-tertiary card-hover h-100 d-flex flex-column align-items-center justify-content-center">
-                <i className={`${skill.icon} fs-1 mb-2`}></i>
-                <span className="fw-bold text-body">{skill.name}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* قسم المهارات الشخصية */}
-        <h2 className="text-primary mb-4 fw-bold border-top border-primary-subtle pt-5">
-          {lang === 'en' ? '🤝 Soft Skills' : '🤝 المهارات الشخصية'}
-        </h2>
-        <div className="row g-3 justify-content-center">
-          {softSkillsList.map((skill, index) => (
-            <div className="col-6 col-md-3" key={index}>
-              <div className="p-3 border rounded border-primary-subtle bg-body-tertiary card-hover h-100 d-flex flex-column align-items-center justify-content-center">
-                <i className={`${skill.icon} fs-1 mb-2`}></i>
-                <span className="fw-bold text-body">
-                  {lang === 'en' ? skill.nameEn : skill.nameAr}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
+        <h2 className="text-primary mb-4 fw-bold">🛠️ Technical Skills</h2>
+        {renderSkills(technical)}
+        <h2 className="text-primary mb-4 fw-bold border-top border-primary-subtle pt-5 mt-5">🤝 Soft Skills</h2>
+        {renderSkills(soft)}
       </div>
     </section>
   );
