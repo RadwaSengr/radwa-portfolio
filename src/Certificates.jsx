@@ -15,7 +15,7 @@ function Certificates() {
     {
       icon: 'fa-solid fa-certificate',
       title: 'AI Hackathon — BreastCancerCare-AI',
-      issuer: 'ITIDA , INSTANT , OCD , CREATIVA ',
+      issuer: 'ITIDA , INSTANT , ODC , CREATIVA ',
       date: '2026',
       description: 'Built responsive, accessible interfaces for healthcare, productivity, and restaurant web experiences.'
     },
@@ -25,7 +25,7 @@ function Certificates() {
     {
       icon: 'fa-solid fa-medal , fa-solid fa-certificate',
       title: 'Top 5 POSITION — AI Hackathon',
-      issuer: 'ITIDA , INSTANT , OCD , CREATIVA ',
+      issuer: 'ITIDA , INSTANT , ODC , CREATIVA ',
       date: '2026',
       description: 'Recognized among the top five finalists for the BreastCancerCare-AI project.'
     }
