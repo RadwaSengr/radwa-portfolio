@@ -7,22 +7,22 @@ function About() {
         <div className="row justify-content-center">
           <div className="col-lg-8 text-center">
             
-           <div className="mb-4">
-  <div className="p-2 bg-light rounded-circle border border-primary d-inline-block shadow-sm overflow-hidden">
-    <img 
-      src="/Radwa-Sengr.jpeg" 
-      alt="Radwa Sengr" 
-      className="img-fluid"
-      style={{ 
-        width: "200px", 
-        height: "200px", 
-        objectFit: "cover", 
-        objectPosition: "center 20%", 
-        borderRadius: "50%"
-      }} 
-    />
-  </div>
-</div>
+            <div className="mb-4">
+              <div className="p-2 bg-light rounded-circle border border-primary d-inline-block shadow-sm overflow-hidden">
+                <img 
+                  src={`${import.meta.env.BASE_URL}Radwa-Sengr.jpeg`} 
+                  alt="Radwa Sengr" 
+                  className="img-fluid"
+                  style={{ 
+                    width: "200px", 
+                    height: "200px", 
+                    objectFit: "cover", 
+                    objectPosition: "center 20%", 
+                    borderRadius: "50%"
+                  }} 
+                />
+              </div>
+            </div>
             
             <h3 className="text-primary fw-bold mb-3">Frontend React Developer</h3>
             <p className="text-secondary fs-5 mb-3">
@@ -51,7 +51,7 @@ function About() {
               </a>
               
               <a 
-                href="/Radwa Usama Sengr - CV (1).pdf" 
+                href={`${import.meta.env.BASE_URL}Radwa Usama Sengr - CV (1).pdf`} 
                 download="Radwa_Sengr_Frontend_CV.pdf"
                 className="btn btn-primary fw-bold"
               >
