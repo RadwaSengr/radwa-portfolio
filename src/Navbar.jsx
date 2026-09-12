@@ -9,9 +9,9 @@ function Navbar({ toggleTheme, theme }) {
     ['about', 'About'],
     ['education', 'Education'],
     ['experience', 'Experience'],
+    ['certificates', 'Certificates'],
     ['skills', 'Skills'],
     ['projects', 'Projects'],
-    ['certificates', 'Certificates'],
     ['contact', 'Contact'],
   ];
 
