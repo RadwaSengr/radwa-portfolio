@@ -53,11 +53,59 @@ h1, h2, h3, h4, h5 { font-family: var(--heading); font-weight: 600; color: var(-
 h1 { font-size: 56px; letter-spacing: -1.68px; margin: 32px 0; }
 h2 { font-size: 28px; line-height: 118%; letter-spacing: -0.24px; margin: 0 0 16px; }
 p { margin: 0 0 16px; }
+
+/* إصلاح شامل وتأكيد إلغاء اللون الوردي في كافة حالات الأزرار والروابط */
+a, 
+a:visited, 
+a:hover, 
+a:active, 
+a:focus {
+  text-decoration: none;
+}
+
 .text-primary { color: var(--accent) !important; }
 .border-primary { border-color: var(--accent) !important; }
-.btn-primary { background-color: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; }
-.btn-outline-primary { color: var(--accent) !important; border-color: var(--accent) !important; }
-.btn-outline-primary:hover { background-color: var(--accent) !important; color: #fff !important; }
+
+/* إعادة تعيين متغيرات Bootstrap وألوان الزر الرئيسي */
+.btn-primary,
+a.btn-primary,
+a.btn-primary:visited,
+.btn-primary:visited,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  --bs-btn-bg: var(--accent) !important;
+  --bs-btn-border-color: var(--accent) !important;
+  --bs-btn-hover-bg: var(--accent) !important;
+  --bs-btn-hover-border-color: var(--accent) !important;
+  --bs-btn-active-bg: var(--accent) !important;
+  --bs-btn-active-border-color: var(--accent) !important;
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+/* إعادة تعيين ألوان الزر المفرغ */
+.btn-outline-primary,
+a.btn-outline-primary,
+a.btn-outline-primary:visited,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  --bs-btn-color: var(--accent) !important;
+  --bs-btn-border-color: var(--accent) !important;
+  --bs-btn-hover-bg: var(--accent) !important;
+  --bs-btn-hover-border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
 .card-hover { transition: transform 0.28s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.28s ease, border-color 0.28s ease; will-change: transform; }
 .card-hover:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(192, 57, 43, 0.14) !important; border-color: var(--accent) !important; }
 .btn, .contact-socials a, .nav-link { transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; }
